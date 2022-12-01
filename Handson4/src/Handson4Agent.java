@@ -1,8 +1,6 @@
 
 import jade.core.Agent;
 import jade.core.behaviours.OneShotBehaviour;
-import jade.domain.DFService;
-import jade.domain.FIPAException;
 
 public class Handson4Agent extends Agent{
     private Handson4GUI gui;
@@ -18,13 +16,6 @@ public class Handson4Agent extends Agent{
 
     @Override
     protected void takeDown(){
-		// Deregister from the yellow pages
-		try {
-			DFService.deregister(this);
-		}
-		catch (FIPAException fe) {
-			fe.printStackTrace();
-		}
 		// Close the GUI
 		gui.dispose();
         System.out.println("Hands On 4 Agent"+getAID().getName()+"Terminating");
